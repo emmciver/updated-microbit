@@ -2,70 +2,68 @@ pins.setPull(DigitalPin.P5, PinPullMode.PullUp)
 pins.setPull(DigitalPin.P1, PinPullMode.PullUp)
 pins.setPull(DigitalPin.P11, PinPullMode.PullUp)
 pins.setPull(DigitalPin.P2, PinPullMode.PullUp)
-let strip = neopixel.create(DigitalPin.P0, 32, NeoPixelMode.RGB)
-strip.show()
+let strip = neopixel.create(DigitalPin.P1, 32, NeoPixelMode.RGB)
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
-strip.setBrightness(150)
+strip.setBrightness(100)
+strip.show()
 basic.forever(function () {
-    if (pins.digitalReadPin(DigitalPin.P5) == 0) {
-        for (let index = 0; index < 2; index++) {
-            basic.showLeds(`
-                # # # # #
-                # . . . #
-                # . . . #
-                # . . . #
-                # # # # #
-                `)
-            basic.pause(200)
-            basic.showLeds(`
-                . . . . .
-                . # # # .
-                . # . # .
-                . # # # .
-                . . . . .
-                `)
-            basic.pause(200)
-            basic.showLeds(`
-                . . . . .
-                . . . . .
-                . . # . .
-                . . . . .
-                . . . . .
-                `)
-            basic.pause(200)
-            basic.showLeds(`
-                . . . . .
-                . . # . .
-                . # . # .
-                . . # . .
-                . . . . .
-                `)
-            basic.pause(200)
-            basic.showLeds(`
-                . . # . .
-                . # . # .
-                # . . . #
-                . # . # .
-                . . # . .
-                `)
-            basic.pause(200)
-            basic.showLeds(`
-                # . # . #
-                . # . # .
-                # . # . #
-                . # . # .
-                # . # . #
-                `)
-            basic.pause(200)
-            basic.showLeds(`
-                # # # # #
-                # # # # #
-                # # # # #
-                # # # # #
-                # # # # #
-                `)
-            basic.pause(200)
-        }
+    if (pins.digitalReadPin(DigitalPin.P2) == 0) {
+        basic.showLeds(`
+            # # # # #
+            # . . . #
+            # . . . #
+            # . . . #
+            # # # # #
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            . # # # .
+            . # . # .
+            . # # # .
+            . . . . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            . . . . .
+            . . # . .
+            . . . . .
+            . . . . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . . . .
+            . . # . .
+            . # . # .
+            . . # . .
+            . . . . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            . . # . .
+            . # . # .
+            # . . . #
+            . # . # .
+            . . # . .
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            # . # . #
+            . # . # .
+            # . # . #
+            . # . # .
+            # . # . #
+            `)
+        basic.pause(500)
+        basic.showLeds(`
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            # # # # #
+            `)
+        basic.pause(500)
     } else {
         basic.clearScreen()
     }
@@ -89,7 +87,7 @@ basic.forever(function () {
     }
 })
 basic.forever(function () {
-    if (pins.digitalReadPin(DigitalPin.P2) == 0) {
+    if (pins.digitalReadPin(DigitalPin.P5) == 0) {
         basic.showString("IT'S OKAY")
     } else {
         basic.clearScreen()
